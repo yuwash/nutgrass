@@ -74,8 +74,8 @@ setup(
     # requirements files see:
     # https://packaging.python.org/en/latest/requirements.html
     install_requires=['iotqatools>=0.5.1'],
-    dependency_links=[
-            'git+https://github.com/telefonicaid/iotqatools@master'
-            '#egg=iotqatools',
-            ],
+    # dependency_links=[
+    #         'git+https://github.com/telefonicaid/iotqatools@master'
+    #         '#egg=iotqatools',
+    #         ],
 )
