@@ -42,8 +42,11 @@ def AttributeType(name):
     return Attribute
 
 
+ATTRIBUTE_TYPES = {'integer': int, 'float': float, 'string': str}
+
+
 def dict_from_attributes_creation(attributes_creation):
-    return {a["name"]: a["value"] for a in
+    return {a["name"]: ATTRIBUTE_TYPES.get(a["type"], str)(a["value"]) for a in
             attributes_creation.get_attributes()}
 
 
