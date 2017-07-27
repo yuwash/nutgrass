@@ -34,15 +34,18 @@ class ContextElementsFactory
  |
  |  get_context_elements(self)
  |      >>> entity = EntityType('mouse')('Mickey')
- |      >>> attributes = nutgrass.AttributeType('int')\
+ |      >>> attributes = AttributeType('int')\
  |      ...     .get_attributes_creation_from_dict(
  |      ...             {'color': 0xffffff, 'background-color': 0})
  |      >>> context_elements = ContextElementsFactory(entity, attributes)\
  |      ...     .get_context_elements()
- |      >>> context_elements.get_context_elements()
- |      [{'attributes': [{'type': 'int', 'name': 'color', 'value': 16777215},
- |      {'type': 'int', 'name': 'background-color', 'value': 0}], 'type':
- |      'mouse', 'id': 'Mickey', 'isPattern': 'false'}]
+ |      >>> expected = [{
+ |      ...     'attributes': [
+ |      ...         {'type': 'int', 'name': 'color', 'value': 16777215},
+ |      ...         {'type': 'int', 'name': 'background-color', 'value': 0}],
+ |      ...     'type': 'mouse', 'id': 'Mickey', 'isPattern': 'false'}]
+ |      >>> context_elements.get_context_elements() == expected
+ |      True
  |
  |  ----------------------------------------------------------------------
  |  Class methods defined here:
@@ -56,12 +59,14 @@ class ContextElementsFactory
 AttributeType(name)
     Return an attribute class for the given type
 
-    >>> attributes = nutgrass.AttributeType('int')\
+    >>> attributes = AttributeType('int')\
     ...     .get_attributes_creation_from_dict(
     ...             {'color': 0xffffff, 'background-color': 0})
-    >>> attributes.get_attributes()
-    [{'type': 'int', 'name': 'color', 'value': 16777215}, {'type': 'int',
-    'name': 'background-color', 'value': 0}]
+    >>> expected = [
+    ...     {'type': 'int', 'name': 'color', 'value': 16777215},
+    ...     {'type': 'int', 'name': 'background-color', 'value': 0}]
+    >>> attributes.get_attributes() == expected
+    True
 
 EntityType(name)
     Return an entity class for the given type
