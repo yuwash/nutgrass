@@ -1,5 +1,7 @@
 # nutgrass
 
+[![Build Status](https://api.travis-ci.org/yuwash/nutgrass.svg?branch=master)](https://travis-ci.org/yuwash/nutgrass)
+
 Simple NGSI utility
 
 Currently Python3 is not supported, because this depends on
