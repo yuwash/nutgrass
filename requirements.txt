@@ -1,2 +1,2 @@
--e git+https://github.com/telefonicaid/iotqatools@master#egg=iotqatools
+-e git+https://github.com/yuwash/iotqatools@master#egg=iotqatools
 -e .
